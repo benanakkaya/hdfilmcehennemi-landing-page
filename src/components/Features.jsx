@@ -116,16 +116,16 @@ export default function Features() {
         <div className='grid xl:grid-cols-5 grid-cols-2 md:grid-cols-3 overflow-hidden relative '>
             {features.map((mov, ind) => (
                 <div key={ind} className={ind > 4 ? 'hidden' :
-                    ind === 3 || ind === 4 ? 'hidden bg-veryDark group xl:relative xl:flex flex-col items-center text-white ' :
-                        ind === 2 ? 'group hidden bg-veryDark md:relative md:flex flex-col items-center text-white ' : 
-                        ind === 0 || ind === 1 ? 'group bg-veryDark relative flex flex-col items-center text-white ' : null}>
+                    ind === 3 || ind === 4 ? 'hidden bg-gray2 group xl:relative xl:flex flex-col items-center text-white ' :
+                        ind === 2 ? 'group hidden bg-gray2 md:relative md:flex flex-col items-center text-white ' : 
+                        ind === 0 || ind === 1 ? 'group bg-gray2 relative flex flex-col items-center text-white ' : null}>
                     <a className='relative' href="/#" >
                         <img className='group-hover:opacity-30 opacity-75' src={mov.image} alt={mov.id} />
 
                         <div className='absolute w-full p-3 flex flex-col gap-1 font-bold bottom-2 text-sm'>
                             <div className='hidden group-hover:flex items-center justify-center gap-1'>
                                 {mov.tags?.map((tag) => (
-                                    <span className='text-xs rounded-lg bg-dark p-1'>{tag}</span>
+                                    <span key={tag} className='text-xs rounded-lg bg-dark p-1'>{tag}</span>
                                 ))}
                             </div>
                             <div className='w-full flex items-center justify-between'>

@@ -1,16 +1,22 @@
 import React from 'react';
-import { FaFilter, FaHome } from "react-icons/fa"
+import { FaHome } from "react-icons/fa"
 import { MdArrowDropDown } from "react-icons/md"
-import { AiFillLock, AiOutlineMenu } from "react-icons/ai"
+import { AiFillLock } from "react-icons/ai"
+import MobileCategories from './MobileCategories';
+import MobileNav from './MobileNav';
 
 export default function Navbar() {
+
+
+
+
     return (
-        <div className='lg:p-0 px-4 bg-dark text-white flex items-center justify-between lg:rounded-t-xl gap-4 border-b-2 border-solid border-customRed'>
-            <button className=' lg:hidden'><AiOutlineMenu /></button>
+        <div className='lg:p-0 relative px-4 bg-dark text-white flex items-center justify-between lg:rounded-t-xl gap-4 border-b-2 border-solid border-customRed'>
+            <MobileNav />
             <img className='h-16 lg:h-full' src='https://www.hdfilmcehennemi.life/assets/front/img/logo-hdf.png' alt="logo" />
             <div className='hidden lg:flex items-center px-2 flex-1 justify-between gap-6'>
                 <ul className='h-8 flex items-center gap-4 font-bold text-sm'>
-                    <li className='h-10 w-10 cursor-pointer text-xl flex items-center justify-center rounded-full bg-customRed'>
+                    <li className='h-10 w-10 cursor-pointer text-xl flex items-center justify-center rounded-full bg-customRed hover:bg-darkRed'>
                         <a href='/#'><FaHome /></a>
                     </li>
                     <li>
@@ -41,7 +47,9 @@ export default function Navbar() {
                     <button className='p-2 hover:bg-darkRed bg-customRed flex items-center gap-1 rounded-xl'><AiFillLock /> Giriş Yap</button>
                 </div>
             </div>
-            <button className=' lg:hidden'><FaFilter /></button>
+            
+            <MobileCategories />
+            
         </div>
     )
 }

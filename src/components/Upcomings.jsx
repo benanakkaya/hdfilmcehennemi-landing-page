@@ -65,14 +65,14 @@ export default function Upcomings() {
   return (
     <div className='flex flex-col p-5 bg-gray2'>
       <div className='flex items-end'>
-        <div className='flex items-center bg-dark rounded-t-lg p-2 text-sm font-bold text-white gap-1'><AiFillPlaySquare className="text-gray-300" /> Yakında Gelecek Filmler</div>
+        <div className='flex items-center bg-dark rounded-t-lg p-2 px-4 text-sm font-bold text-white gap-1'><AiFillPlaySquare className="text-gray-300" /> Yakında Gelecek Filmler</div>
         <div className='border-b-2 border-solid flex items-center justify-end border-gray flex-1'>
-          <a className='text-white font-bold hover:text-red-400 cursor-pointer text-sm'>Tüm Fragmanlar</a>
+          <a href='/#' className='text-white font-bold hover:text-red-400 cursor-pointer text-sm'>Tüm Fragmanlar</a>
         </div>
       </div>
-      <div className='grid grid-cols-3 lg:grid-cols-9 py-4 px-2 bg-dark'>
+      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 py-4 px-2 gap-2 bg-dark'>
         {upcomings.map((mov) => (
-          <div className='cursor-pointer group flex items-center justify-center flex-col gap-5'>
+          <div key={mov.id} className='cursor-pointer group flex items-center justify-center flex-col gap-5'>
             <div className='p-2 group-hover:p-1 border-solid w-20 h-20 border-2 rounded-full group-hover:border-gray border-customRed flex flex-col items-center '>
               <img src={mov.image} alt={mov.id} className='w-16 h-16 rounded-full' />
               <span className='text-xs text-white p-half flex items-center justify-center group-hover:bg-gray bg-customRed rounded-lg'>{mov.date}</span>
